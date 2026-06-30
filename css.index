@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Cat, Ninja</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        overflow-x: hidden;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .cat {
+        position: fixed;
+        bottom: 30px;
+        left: -200px;
+        font-size: 80px;
+        display: none;
+    }
+
+    .run {
+        display: block;
+        animation: runAcross 4s linear forwards;
+    }
+
+    @keyframes runAcross {
+        from {
+            left: -200px;
+        }
+        to {
+            left: 110%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<h1>🐱 My Cat, Ninja</h1>
+<p style="text-align:center;">Watch Ninja run across the screen every 5 seconds!</p>
+
+<div class="cat" id="cat">🐈</div>
+
+<script>
+const cat = document.getElementById("cat");
+
+function runCat() {
+    cat.classList.remove("run");
+
+    // Restart animation
+    void cat.offsetWidth;
+
+    cat.classList.add("run");
+
+    // Hide after animation finishes
+    setTimeout(() => {
+        cat.classList.remove("run");
+    }, 4000);
+}
+
+// Run immediately
+runCat();
+
+// Then every 5 seconds
+setInterval(runCat, 5000);
+</script>
+
+</body>
+</html>
